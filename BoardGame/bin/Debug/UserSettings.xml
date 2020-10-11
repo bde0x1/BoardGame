@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <Player>
+    <Name>Játékos</Name>
+    <FigureColor>BlueFigure</FigureColor>
+    <Balance>2000</Balance>
+  </Player>
+  <Robot1>
+    <Name>Robot1</Name>
+    <FigureColor>RedFigure</FigureColor>
+    <Balance>2000</Balance>
+  </Robot1>
+  <Robot2>
+    <Name>Robot2</Name>
+    <FigureColor>YellowFigure</FigureColor>
+    <Balance>2000</Balance>
+  </Robot2>
+  <Robot3>
+    <Name>Robot3</Name>
+    <FigureColor>GreenFigure</FigureColor>
+    <Balance>2000</Balance>
+  </Robot3>
+  <Level>Könnyű</Level>
+</Settings>
