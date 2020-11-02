@@ -118,61 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Kincskereső kalandorok Szabályzat
+    <value>                                                                           Kincskereső kalandorok Szabályzat
 
 1.	Játékosok:
-A.	4 játékossal lehet játszani (3 robot)
+       A.	4 játékossal lehet játszani (3 robot)
 2.	Kockák:
-A.	2 db kocka van
-B.	A jobb oldali egy hagyományos kocka (1-6)
-C.	A bal oldali kockán az 1-es helyett egy felhő van (Köd)
-a)	A felhő (köd) esetén a kocka értéke egy
-b)	Ilyenkor a két kocka felét lépheti le az adott játékos
+       A.	2 db kocka van
+       B.	A jobb oldali egy hagyományos kocka (1-6)
+       C.	A bal oldali kockán az 1-es helyett egy felhő van (Köd)
+         a)	A felhő (köd) esetén a kocka értéke egy
+         b)	Ilyenkor a két kocka felét lépheti le az adott játékos
 3.	Kártyák:
-A.	Hupsz kártya:
-a)	Játékost hátráltató kártya
-b)	Amennyiben a játékos rendelkezik a megfelelő képességgel nem történik semmi, ellenkező esetben a kártya aktiválódik
-c)	A kártyák elhasználása után a pakli újrakeverődik.
-B.	Hurrá kártya:
-a)	Játékost előnyhöz juttatja
-b)	A kártyák elhasználása után a pakli újrakeverődik.
-C.	Lelet kártya:
-a)	A kártya megmondja a lelet értékét és ásatására fordított költségek összességét, a lelet feltárásának idejét.
-b)	Régész képesség esetén az ásatás kétszer gyorsabb
-D.	Képesség kártya:
-a.	7 féle képesség van mind a 7-böl 1 (összesen 7 kártya)
-i.	Kereskedelem (cserélhet 1 még nem kész leletet a sajátjára, ami szintén nem megkezdett)
-ii.	Régész (ásatás időt gyorsítja a még nem megkezdett leleteken)
-iii.	Vállalkozó (passzív jövedelem, minden kör elején pénzt kap)
-iv.	Óvatos (Baleset esetén nem maradsz ki)
-v.	Őrangyal (Megóv egy kieséstől)
-vi.	Szárnysegéd (Egy barátja mindig kisegíti, nem kell fizetnie, kivéve a befejezett feltárási területeknél)
-vii.	Talpraesett (Nem marad ki a hegyomlásnál)
+       A.	Hupsz kártya:
+         a)	Játékost hátráltató kártya
+         b)	Amennyiben a játékos rendelkezik a megfelelő képességgel nem történik semmi, ellenkező esetben a kártya aktiválódik
+         c)	A kártyák elhasználása után a pakli újrakeverődik.
+       B.	Hurrá kártya:
+         a)	Játékost előnyhöz juttatja
+         b)	A kártyák elhasználása után a pakli újrakeverődik.
+       C.	Lelet kártya:
+         a)	A kártya megmondja a lelet értékét és ásatására fordított költségek összességét, a lelet feltárásának idejét.
+         b)	Régész képesség esetén az ásatás kétszer gyorsabb
+       D.	Képesség kártya:
+         a)	7 féle képesség van mind a 7-böl 1 (összesen 7 kártya)
+           i.	                Kereskedelem (cserélhet 1 még nem kész leletet a sajátjára, ami szintén nem megkezdett)
+           ii.	                Régész (ásatás időt gyorsítja a még nem megkezdett leleteken)
+           iii. 	Vállalkozó (passzív jövedelem, minden kör elején pénzt kap)
+           iv. 	Óvatos (Baleset esetén nem maradsz ki)
+           v.	                Őrangyal (Megóv egy kieséstől)
+           vi.	                Szárnysegéd (Egy barátja mindig kisegíti, nem kell fizetnie, kivéve a befejezett feltárási területeknél)
+           vii.	Talpraesett (Nem marad ki a hegyomlásnál)
 4.	Mezők:
-A.	Start:
-a)	Itt kezd a 4 játékos
-B.	Hupsz:
-a)	Aki rálép húznia kell egy Hupsz kártyát
-b)	A kártya leírja a teendőket
+      A.	Start:
+         a)	Itt kezd a 4 játékos
+      B.	Hupsz:
+         a)	Aki rálép húznia kell egy Hupsz kártyát
+         b)	A kártya leírja a teendőket
 
-C.	Hurrá:
-a)	Ha ideléptél Húznod kell egy Hurrá kártyát
-b)	A kártya leírja a teendőket
-D.	Képesség:
-a)	Képesség kártyát kapsz
-b)	Ezek a kártyák végig kísérnek az utazásod során
-E.	Ebéd szünet:
-a)	Enni is kell valamit
-b)	A következő körből kimaradsz
-F.	Sárkány repülés:
-a)	Szórakoztál kicsit
-b)	Dobj egyet a két kockával és annyit vissza kell lépned.
-G.	Hegyomlás:
-a)	Beszorultál, a mentőalakulatok mindjárt itt vannak
-b)	Ki maradsz 2 körből
-H.	Üres mező:
-a)	Itt ásatást végezhetsz húzz egy lelet kártyát
-b)	A lelet kártya alapján cselekedj, vagy csak tedd vissza a pakliba és folytatódjon a játék
+      C.	Hurrá:
+         a)	Ha ideléptél Húznod kell egy Hurrá kártyát
+         b)	A kártya leírja a teendőket
+      D.	Képesség:
+         a)	Képesség kártyát kapsz
+         b)	Ezek a kártyák végig kísérnek az utazásod során
+      E.	Ebéd szünet:
+         a)	Enni is kell valamit
+         b)	A következő körből kimaradsz
+      F.	Sárkány repülés:
+         a)	Szórakoztál kicsit
+         b)	Dobj egyet a két kockával és annyit vissza kell lépned.
+      G.	Hegyomlás:
+         a)	Beszorultál, a mentőalakulatok mindjárt itt vannak
+         b)	Ki maradsz 2 körből
+      H.	Üres mező:
+         a)	Itt ásatást végezhetsz húzz egy lelet kártyát
+         b)	A lelet kártya alapján cselekedj, vagy csak tedd vissza a pakliba és folytatódjon a játék
 
 
 </value>

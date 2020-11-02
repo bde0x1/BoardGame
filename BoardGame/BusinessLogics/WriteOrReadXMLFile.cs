@@ -48,6 +48,26 @@ namespace BoardGame.BusinessLogics
             }
         }
 
+        public static void ImportDefaultSettings(Player player, Robot robot1, Robot robot2, Robot robot3, Level level)
+        {
+            player.Name = "Player";
+            robot1.Name = "Robot1";
+            robot2.Name = "Robot2";
+            robot3.Name = "Robot3";
+
+            player.FigureColor = Figure.GreenFigure;
+            robot1.FigureColor = Figure.RedFigure;
+            robot2.FigureColor = Figure.YellowFigure;
+            robot3.FigureColor = Figure.BlueFigure;
+
+            player.Balance = 2000;
+            robot1.Balance = 2000;
+            robot2.Balance = 2000;
+            robot3.Balance = 2000;
+
+            level.LevelType = Levels.Könnyű;
+        }
+
         public static void IfFileNotExistCreateXMLFile(Player player, Robot robot1, Robot robot2, Robot robot3, Level level)
         {
             using (XmlWriter xmlWriter = XmlWriter.Create(fileName))

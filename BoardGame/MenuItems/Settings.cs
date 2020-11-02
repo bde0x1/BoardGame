@@ -17,7 +17,7 @@ namespace BoardGame
 
         public Settings(Player Player, Robot Robot1, Robot Robot2, Robot Robot3, Level level)
         {
-            InitializeComponent();                      
+            InitializeComponent();
 
             ButtonTip.SetToolTip(Cancel, "Kilépés a Menübe");
             ButtonTip.SetToolTip(SaveSettings, "Mentés, és kilépés a menübe");
@@ -28,7 +28,7 @@ namespace BoardGame
             this.robot3 = Robot3;
             this.m_Level = level;
 
-            foreach (var llevels in Enum.GetValues(typeof(Levels)))
+            foreach (var llevels in Enum.GetValues(typeof(Figure)))
             {
                 LevelSelection.Items.Add(llevels);
             }
@@ -41,24 +41,40 @@ namespace BoardGame
                 Robot3FigureColor.Items.Add(figure);
             }
 
+            FillTheSettingsNodes();
+        }
+
+        private void FillTheSettingsNodes()
+        {
             if (File.Exists("UserSettings.xml"))
             {
                 WriteOrReadXMLFile.ImportData(player, robot1, robot2, robot3, m_Level);
 
-                PlayerName.Text = player.Name;
-                Robot1Name.Text = robot1.Name;
-                Robot2Name.Text = robot2.Name;
-                Robot3Name.Text = robot3.Name;
-
-                PlayerFigureColor.SelectedItem = player.FigureColor;
-                Robot1FigureColor.SelectedItem = robot1.FigureColor;
-                Robot2FigureColor.SelectedItem = robot2.FigureColor;
-                Robot3FigureColor.SelectedItem = robot3.FigureColor;
-
-                StarterMoney.Text = player.Balance.ToString();
-
-                LevelSelection.SelectedItem = m_Level.LevelType;
+                InitializeUIElements();
             }
+            else
+            {
+                WriteOrReadXMLFile.ImportDefaultSettings(player, robot1, robot2, robot3, m_Level);
+
+                InitializeUIElements();
+            }
+        }
+
+        private void InitializeUIElements()
+        {
+            PlayerName.Text = player.Name;
+            Robot1Name.Text = robot1.Name;
+            Robot2Name.Text = robot2.Name;
+            Robot3Name.Text = robot3.Name;
+
+            PlayerFigureColor.SelectedItem = player.FigureColor;
+            Robot1FigureColor.SelectedItem = robot1.FigureColor;
+            Robot2FigureColor.SelectedItem = robot2.FigureColor;
+            Robot3FigureColor.SelectedItem = robot3.FigureColor;
+
+            StarterMoney.Text = player.Balance.ToString();
+
+            LevelSelection.SelectedItem = m_Level.LevelType;
         }
 
         private void SaveSettings_Click(object sender, EventArgs e)
@@ -99,10 +115,10 @@ namespace BoardGame
                     else
                     {
                         MessageBox.Show("Kérlek minden játékosnak válassz különböző figurát!");
-                    }                   
+                    }
                 }
                 else
-                {                    
+                {
                     MessageBox.Show("Kérlek minden játékosnak válassz egy figurát!");
                 }
             }
@@ -120,7 +136,7 @@ namespace BoardGame
         private bool CheckThatUSerFilledEveryTextBox()
         {
             if (PlayerName.Text != "" && Robot1Name.Text != "" && Robot2Name.Text != "" && Robot3Name.Text != "" && StarterMoney.Text != "")
-            {                 
+            {
                 return true;
             }
             else

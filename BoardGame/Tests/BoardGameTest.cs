@@ -2,8 +2,6 @@
 using BoardGame.BusinessLogics;
 using BoardGame.Domain_Model;
 using BoardGame.DomainModel;
-using Moq;
-using System.Collections.Generic;
 
 namespace BoardGame.Tests
 {
@@ -16,75 +14,61 @@ namespace BoardGame.Tests
         Robot robot3 = new Robot("Meddy", 3, 0, 3200);
         Level level = new Level();
 
-        [TestCase]
+        [Test]
         public void TestGameOverMethod()
         {
             level.LevelType = Levels.Nehéz;
-            GameHandler handler = new GameHandler(player, robot1, robot2, robot3, level);
+            var handler = new GameHandler(player, robot1, robot2, robot3, level);
 
-            string FinalResult = handler.ResultAddvertisement(player, robot1, robot2, robot3);
+            string finalResult = handler.ResultAddvertisement(player, robot1, robot2, robot3);
 
-            string expectedResult = "Bob,Joe,Barna,Meddy";
+            string expectedResult = "Bob,Joe,Barna,Meddy,";
 
-            Assert.AreEqual(expectedResult, FinalResult);
+            Assert.AreEqual(expectedResult, finalResult);
         }
 
-        //[TestCase]
-        //public void TestICanLose()
-        //{
-        //    level.LevelType = Levels.Nehéz;
-        //    GameHandler handler = new GameHandler(player, robot1, robot2, robot3, level);
-        //    BoardGame bg = new BoardGame(handler, level);
-        //    bg.CurrentTurn = 1;
+        [TestCase(10)]
+        [TestCase(-10)]
+        public void TestStepFigureMethd(int throwenValue)
+        {
+            level.LevelType = Levels.Nehéz;
+            var handler = new GameHandler(player, robot1, robot2, robot3, level);
+            var bGame = new BoardGame(handler,level);
+            player.CurrentPosition = 0;
+            bGame.StepFigure(player, throwenValue);
 
-        //    var listOfPropertyCards = new List<CardModelFromDatabase.PropertyCard>();
-        //    listOfPropertyCards.Add(new CardModelFromDatabase.PropertyCard { BuildingTurns  = 1, PropertyFinishedValue = 100, PropertyID=1, PropertyName="a", PropertyValue=50 });
-        //    Mock<GameHandler> mockG = new Mock<GameHandler>();
-        //    Mock<Cards> mockC = new Mock<Cards>();
-        //    mockG.Setup(cards => cards).Equals(mockC.Object);
-        //    mockC.Setup(cards => cards.PropertyCards).Returns(listOfPropertyCards);
+            var finalResult = player.CurrentPosition;            
 
-        //    bg.OwnedProperties.Add(GetField(player, 100, 3));
-        //    bg.OwnedProperties.Add(GetField(player, 100, 7));
-        //    bg.OwnedProperties.Add(GetField(player, 100, 16));
-        //    bg.OwnedProperties.Add(GetField(player, 100, 27));
-        //    bg.OwnedProperties.Add(GetField(robot2, 100, 17));
-        //    bg.OwnedProperties.Add(GetField(robot2, 100, 21));
-        //    bg.OwnedProperties.Add(GetField(robot2, 100, 31));
-        //    bg.OwnedProperties.Add(GetField(robot2, 100, 33));
-        //    bg.OwnedProperties.Add(GetField(robot1, 100, 4));
-        //    bg.OwnedProperties.Add(GetField(robot1, 100, 6));
-        //    bg.OwnedProperties.Add(GetField(robot1, 100, 29));
-        //    bg.OwnedProperties.Add(GetField(robot1, 100, 37));
-        //    bg.OwnedProperties.Add(GetField(robot3, 100, 9));
-        //    bg.OwnedProperties.Add(GetField(robot3, 100, 39));
-        //    bg.OwnedProperties.Add(GetField(robot3, 100, 34));
+            if (throwenValue == 10)
+            {
+                var expectedResult = 10;
+                Assert.AreEqual(expectedResult, finalResult);
+            }
+            else if (throwenValue == -10)
+            {
+                var expectedResult = 30;
+                Assert.AreEqual(expectedResult, finalResult);
+            }           
+        }
 
+        [Test]
+        public void TestRollTheDiceMethod()
+        {
+            level.LevelType = Levels.Nehéz;
+            var handler = new GameHandler(player, robot1, robot2, robot3, level);
+            var throwenValue = handler.RollTheDice();
+            Assert.Positive(throwenValue);
+            Assert.GreaterOrEqual(throwenValue,1);
+            Assert.IsNotNull(throwenValue);
+        }
 
-        //    player.CurrentPosition = 1;
-        //    robot2.CurrentPosition = 25;
-        //    robot3.CurrentPosition = 36;
-        //    robot1.CurrentPosition = 13;
-
-        //    PropertyCardForRobot PCFR = new  PropertyCardForRobot(bg, player, robot1, robot2, robot3, mockG.Object.cards, level);
-
-        //    double FinalResult = PCFR.ICanLose(robot1);
-
-        //    double expectedResult = 100;
-
-        //    Assert.AreEqual(expectedResult, FinalResult);
-        //}
-
-        //private Field GetField(Player owner, int price, int location)
-        //{
-        //    Field field = new Field();
-        //    field.OwnedField = true;
-        //    field.FieldOwner = owner;
-        //    field.FieldValue = 200;
-        //    field.FieldFinishedValue = price;
-        //    field.FieldLocation = location;
-
-        //    return field;
-        //}
+        [Test]
+        public void TestPlayerGoesIntoFailureMethod()
+        {
+            level.LevelType = Levels.Nehéz;
+            var handler = new GameHandler(player, robot1, robot2, robot3, level);
+            handler.PlayerGoesIntoFailure();
+            Assert.IsTrue(player.Loser);
+        }
     }
 }

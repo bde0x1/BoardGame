@@ -37,7 +37,6 @@ namespace BoardGame.BusinessLogics
             m_BoardGameForm.ShowDialog();
         }
 
-        //TheThrowenValue
         public int RollTheDice()
         {
             int leftCube = Cube.ThrownValue;

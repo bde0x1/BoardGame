@@ -29,6 +29,10 @@ namespace BoardGame
             {
                 WriteOrReadXMLFile.ImportData(player, robot1, robot2, robot3, level);
             }
+            else
+            {
+                WriteOrReadXMLFile.ImportDefaultSettings(player, robot1, robot2, robot3, level);
+            }
 
             ButtonTip.SetToolTip(GoToTheGame,"Játék");
             ButtonTip.SetToolTip(GoToSettings, "Beállítások");

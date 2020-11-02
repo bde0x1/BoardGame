@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BoardGame.exe" size="882152">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BoardGame.exe" size="883688">
       <assemblyIdentity name="BoardGame" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BNqVN1eNYb0uMgAhG05QB2797PqP8wkRrvUAi085aN0=</dsig:DigestValue>
+        <dsig:DigestValue>C2i2yLMu8epIhNq5zFPwBQ+vSu3dk8noByIlT05KWOw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -99,18 +99,6 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>XqougqJrCzAigNCPVNydolFl3Q4oa+UkQKJxKF1j9pU=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Moq.dll" size="224256">
-      <assemblyIdentity name="Moq" version="4.14.0.0" publicKeyToken="69F491C39445E920" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WSURlFX9r+zLVfxsXHSjx1DhzzrpLBEqXwSwT3VkIP8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1290,13 +1278,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="BoardGame.exe.config" size="19770">
+  <file name="BoardGame.exe.config" size="19769">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>U3gthwECzhiCXHHSawzdOv1EQYmwVRQ+OMcday3gavM=</dsig:DigestValue>
+      <dsig:DigestValue>IAuItVjwDX9PWPcK295/3Ys4uhNjhJeAIJU4XZLaX/g=</dsig:DigestValue>
     </hash>
   </file>
   <file name="icon.ico" size="43310">
