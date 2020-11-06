@@ -624,80 +624,7 @@ namespace BoardGame
                 ThrowWithTheCubes.Enabled = false;
                 EndTurn.Enabled = false;
 
-                if (robot1.CanNotRollForXTurn > 0)
-                {
-                    robot1.CanNotRollForXTurn -= 1;
-
-                    MessageBox.Show(robot1.Name + " kimaradt, " + robot2.Name + " következik.");
-
-                    if (robot1.CanNotRollForXTurn == 0)
-                    {
-                        Robot1CanRoll.Text = "Léphetsz!";
-                        Robot1CanRoll.ForeColor = Color.Green;
-                    }
-                    else
-                    {
-                        Robot1CanRoll.Text = robot1.CanNotRollForXTurn + "-körig kimarad!";
-                    }
-
-                    if (robot2.CanNotRollForXTurn > 0)
-                    {
-                        robot2.CanNotRollForXTurn -= 1;
-
-                        MessageBox.Show(robot2.Name + " kimaradt, " + robot3.Name + " következik.");
-
-                        if (robot2.CanNotRollForXTurn == 0)
-                        {
-                            Robot2CanRoll.Text = "Léphetsz!";
-                            Robot2CanRoll.ForeColor = Color.Green;
-                        }
-                        else
-                        {
-                            Robot2CanRoll.Text = robot2.CanNotRollForXTurn + "-körig kimarad!";
-                        }
-
-                        if (robot3.CanNotRollForXTurn > 0)
-                        {
-                            robot3.CanNotRollForXTurn -= 1;
-
-                            MessageBox.Show(robot3.Name + " kimaradt, " + player.Name + " következik.");
-
-                            if (robot3.CanNotRollForXTurn == 0)
-                            {
-                                Robot3CanRoll.Text = "Léphetsz!";
-                                Robot3CanRoll.ForeColor = Color.Green;
-                            }
-                            else
-                            {
-                                Robot3CanRoll.Text = robot3.CanNotRollForXTurn + "-körig kimarad!";
-                            }
-
-                            if (player.CanNotRollForXTurn > 0)
-                            {
-                                m_CalculateNextPlayer.GetTheNextPlayersTurnStartingWithThePlayer();
-                            }
-                            else
-                            {
-                                CurrentTurn = 0;
-
-                                ThrowWithTheCubes.Enabled = true;
-                                EndTurn.Enabled = false;
-                            }
-                        }
-                        else
-                        {
-                            CurrentTurn = 3;
-                        }
-                    }
-                    else
-                    {
-                        CurrentTurn = 2;
-                    }
-                }
-                else
-                {
-                    m_NewTurnHelper.NewTurnWithRobot1();
-                }
+                GetNextRobot();
             }
 
             System.Threading.Thread.Sleep(200);
@@ -705,6 +632,87 @@ namespace BoardGame
             m_RobotTurns.RobotTurns();
 
             TurnText.Text = player.Name + turnText;
+        }
+
+        private void GetNextRobot()
+        {
+            if (robot1.CanNotRollForXTurn > 0)
+            {
+                robot1.CanNotRollForXTurn -= 1;
+
+                MessageBox.Show(robot1.Name + " kimaradt, " + robot2.Name + " következik.");
+
+                if (robot1.CanNotRollForXTurn == 0)
+                {
+                    ChangeLabelColor(Robot1CanRoll);
+                }
+                else
+                {
+                    Robot1CanRoll.Text = robot1.CanNotRollForXTurn + "-körig kimarad!";
+                }
+
+                if (robot2.CanNotRollForXTurn > 0)
+                {
+                    robot2.CanNotRollForXTurn -= 1;
+
+                    MessageBox.Show(robot2.Name + " kimaradt, " + robot3.Name + " következik.");
+
+                    if (robot2.CanNotRollForXTurn == 0)
+                    {
+                        ChangeLabelColor(Robot2CanRoll);
+                    }
+                    else
+                    {
+                        Robot2CanRoll.Text = robot2.CanNotRollForXTurn + "-körig kimarad!";
+                    }
+
+                    if (robot3.CanNotRollForXTurn > 0)
+                    {
+                        robot3.CanNotRollForXTurn -= 1;
+
+                        MessageBox.Show(robot3.Name + " kimaradt, " + player.Name + " következik.");
+
+                        if (robot3.CanNotRollForXTurn == 0)
+                        {
+                            ChangeLabelColor(Robot3CanRoll);
+                        }
+                        else
+                        {
+                            Robot3CanRoll.Text = robot3.CanNotRollForXTurn + "-körig kimarad!";
+                        }
+
+                        if (player.CanNotRollForXTurn > 0)
+                        {
+                            m_CalculateNextPlayer.GetTheNextPlayersTurnStartingWithThePlayer();
+                        }
+                        else
+                        {
+                            m_NewTurnHelper.NewTurnWithPlayer();
+
+                            ThrowWithTheCubes.Enabled = true;
+                            EndTurn.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        m_NewTurnHelper.NewTurnWithRobot3();
+                    }
+                }
+                else
+                {
+                    m_NewTurnHelper.NewTurnWithRobot2();
+                }
+            }
+            else
+            {
+                m_NewTurnHelper.NewTurnWithRobot1();
+            }
+        }
+
+        private void ChangeLabelColor(Label label)
+        {
+            label.Text = "Léphetsz!";
+            label.ForeColor = Color.Green;
         }
 
         public void StepFigure(Player player, int thrownValue)

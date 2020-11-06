@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BoardGame.exe" size="883688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BoardGame.exe" size="880616">
       <assemblyIdentity name="BoardGame" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>C2i2yLMu8epIhNq5zFPwBQ+vSu3dk8noByIlT05KWOw=</dsig:DigestValue>
+        <dsig:DigestValue>/ImBtYMu1c6Bryhh1Svjp2btCNXHFGm5tz08jS9jC7I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1278,13 +1278,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="BoardGame.exe.config" size="19769">
+  <file name="BoardGame.exe.config" size="19768">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>IAuItVjwDX9PWPcK295/3Ys4uhNjhJeAIJU4XZLaX/g=</dsig:DigestValue>
+      <dsig:DigestValue>dk2BlbC0AOo+renvZjSe2vrZZMSvtj8P4yZHC7vifrY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="icon.ico" size="43310">

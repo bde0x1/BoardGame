@@ -106,16 +106,6 @@ namespace BoardGame.BusinessLogics
             return winner + "," + second + "," + third + "," + fourth + ",";
         }
 
-        public void GameOver()
-        {
-            EndResult end = new EndResult(ResultAddvertisement(player, robot1, robot2, robot3));            
-            if (end.ShowDialog() == DialogResult.OK)
-            {
-                m_BoardGameForm.Close();
-                Application.Exit();
-            }
-        }
-
         private string GetNameByPlace(int[] balances,int index, ref string name) {
 
             if (balances[index] == player.Balance)
@@ -137,6 +127,17 @@ namespace BoardGame.BusinessLogics
 
             return name;
         }
+
+        public void GameOver()
+        {
+            EndResult end = new EndResult(ResultAddvertisement(player, robot1, robot2, robot3));
+            if (end.ShowDialog() == DialogResult.OK)
+            {
+                m_BoardGameForm.Close();
+                Application.Exit();
+            }
+        }
+
 
         public void PlayerGoesIntoFailure()
         {

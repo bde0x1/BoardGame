@@ -77,6 +77,7 @@
             // 
             this.PlayerStartedProperties.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(76)))), ((int)(((byte)(36)))));
             this.PlayerStartedProperties.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerStartedProperties.ForeColor = System.Drawing.Color.Gold;
             this.PlayerStartedProperties.FormattingEnabled = true;
             this.PlayerStartedProperties.Location = new System.Drawing.Point(35, 252);
             this.PlayerStartedProperties.Name = "PlayerStartedProperties";
@@ -87,6 +88,7 @@
             // 
             this.RobotsStartedProperties.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(76)))), ((int)(((byte)(36)))));
             this.RobotsStartedProperties.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RobotsStartedProperties.ForeColor = System.Drawing.Color.Gold;
             this.RobotsStartedProperties.FormattingEnabled = true;
             this.RobotsStartedProperties.Location = new System.Drawing.Point(322, 252);
             this.RobotsStartedProperties.Name = "RobotsStartedProperties";
